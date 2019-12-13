@@ -1,0 +1,46 @@
+<beans
+    xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">  
+     
+     	<bean id="studentOne" class="com.hcl.SpringCalc.Student" scope="prototype">
+		<property name="sno" value="1" />
+		<property name="name" value="Deepak" />
+		<property name="lunchBox">
+			<bean class="com.hcl.SpringCalc.LunchBox">
+				<property name="snacks" value="Pizza..."/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="studentTwo" class="com.hcl.SpringCalc.Student" scope="prototype">
+		<property name="sno" value="2" />
+		<property name="name" value="Jack" />
+		<property name="lunchBox">
+			<bean class="com.hcl.SpringCalc.LunchBox">
+			<property name="snacks" value="Burger..."/>
+		</bean>
+	</property>
+</bean>
+				
+	<bean id="studentThree" class="com.hcl.SpringCalc.Student" scope="prototype">
+		<property name="sno" value="3" />
+		<property name="name" value="Jill" />
+		<property name="lunchBox">
+			<bean class="com.hcl.SpringCalc.LunchBox">
+			<property name="snacks" value="Chapathhi..."/>
+		</bean>
+	</property>
+</bean>
+	<bean id="faculty" class="com.hcl.SpringCalc.Faculty" scope="singleton">
+		<property name="fname" value="Prasanna..."/>
+		<property name="students">
+				<list>
+					<ref bean="studentOne"/>
+					<ref bean="studentTwo"/>
+					<ref bean="studentThree"/>
+				</list>
+				</property>
+			</bean>
+	</beans>
