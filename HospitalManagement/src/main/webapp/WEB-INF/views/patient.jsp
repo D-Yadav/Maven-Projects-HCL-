@@ -7,26 +7,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Patient registration</title>
 </head>
 <body>
 <h2>Patient registration form</h2>
-<c:url var="action" value="/patient/enroll.html"></c:url>
-<form:form method="post" action="${action}" commandName="register" cssClass="patientForm">
+<c:url var="action" value="enroll"></c:url>
+<form:form method="post" action="${action}" commandName="patient" cssClass="patientForm">
 	<table>
-		<c:if test="${!empty patient}">
-			<tr>
-				<td>
-					<form:label path="pno" cssClass="patientLabel">
-						<spring:message code="label.pno"/>
-					</form:label>
-				</td>
-				<td>
-					<form:input path="pno" readonly="true" size="8" disabled="true"/>
-					<form:hidden path="pno"/>
-				</td>
-			</tr>
-		</c:if>
+	
 		<tr>
 			<td>
 				<form:label path="firstName" cssClass="patientLabel">
@@ -60,7 +48,7 @@
 		<tr>
 			<td>
 				<form:label path="contactNo" cssClass="patientLabel">
-					<spring:message code="label.salary"/>
+					<spring:message code="label.contactNo"/>
 				</form:label>
 			</td>
 			<td>
@@ -69,10 +57,20 @@
 		</tr>
 		<tr>
 			<td>
+				<form:label path="password" cssClass="patientLabel">
+					Password
+				</form:label>
+			</td>
+			<td>
+				<form:input path="password"/><form:errors path="password" cssClass="error"></form:errors>
+			</td>
+		</tr>
+		<tr>
+			<td>
 			
-				<c:if test="${empty patient.firstName}">
+				
 					<input type="submit" value="<spring:message code="label.enrollpatient"/>"/>
-				</c:if>
+				
 			</td>
 		</tr>
 	</table>

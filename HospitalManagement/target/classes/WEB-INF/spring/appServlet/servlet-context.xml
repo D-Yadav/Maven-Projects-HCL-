@@ -41,6 +41,7 @@
 		<beans:property name="annotatedClasses">
 			<beans:list>
 				<beans:value>com.pack.form.Patient</beans:value>
+				<beans:value>com.pack.form.Physician</beans:value>
 			</beans:list>
 		</beans:property>
 		<beans:property name="hibernateProperties">

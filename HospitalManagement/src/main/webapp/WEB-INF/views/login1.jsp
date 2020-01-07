@@ -7,18 +7,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Login page</title>
+<title>Physician Login Page</title>
 </head>
 <body>
-        <c:url var="action" value="/checkLogin"></c:url>
-            <form:form id="loginForm" commandName="login" action="${action}" >
+ <body>
+        <c:url var="action" value="/checkLogin1"></c:url>
+            <form:form id="login1Form" commandName="login1" action="${action}" >
                 <table align="center">
                     <tr>
                         <td>
-                            <form:label path="pno">UserId: </form:label>
+                            <form:label path="PhyNo">UserId: </form:label>
                         </td>
                         <td>
-                            <form:input path="pno" name="pno" id="pno" />
+                            <form:input path="PhyNo" name="PhyNo" id="PhyNo" />
                         </td>
                     </tr>
                     <tr>
@@ -32,13 +33,13 @@
                     <tr>
                         <td></td>
                         <td align="left">
-                           <input type="submit" value="Login"/>
+                           <input type="submit" value="Login1"/>
                         </td>
                     </tr>
                     <tr></tr>
                     <tr>
                         <td></td>
-                        <td><a href="<c:url value="/newuser"/>">New User!!</a>
+                        <td><a href="<c:url value="/newuser1"/>">New User!!</a>
                         </td>
                     </tr>
                 </table>
